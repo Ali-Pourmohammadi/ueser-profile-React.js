@@ -16,11 +16,16 @@ export default function Container(){
         setAddBtnUser(false)
         setBtnEditUser(btn=> !btn);
     }
+    // add user
+    function addUser(user){
+        setUsers([...users , user]);
+        setAddBtnUser(btn => !btn);
+    }
     return (<div>
         <div className="list-container">
             <section className="wrapper">
             <List users = {users} showEditUser = {showEditUser}/>
-        { btnAddUser &&<AddUser />}
+        { btnAddUser &&<AddUser addUser = {addUser} />}
         {btnEditUser&&<EditUser />}
 
             </section>

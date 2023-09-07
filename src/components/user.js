@@ -4,6 +4,6 @@ export default function User({user , showEditUser}){
         <img src={user.image} alt="" className="user-img" />
         <span className="user-name">{user.name}</span>
         <span className="user-title">{user.text}</span>
-        <button className="btn" onClick={()=> showEditUser(user.id)}>Edit</button>
+        <button className="btnEdit" onClick={()=> showEditUser(user.id)}>Edit</button>
     </li>)
 }
