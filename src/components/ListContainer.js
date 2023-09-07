@@ -7,26 +7,26 @@ import { useState } from "react"
 export default function Container(){
     const [ users , setUsers] = useState(data);
     const [btnAddUser , setAddBtnUser] = useState(false);
-    const [btnEditUser , setBtnEditUser] = useState(false);
+    const [selected , setSelected] = useState(null);
     function showAddUser(){
-        setBtnEditUser(false);
         setAddBtnUser(btn=> !btn);
     }
-    function showEditUser(id){
-        setAddBtnUser(false)
-        setBtnEditUser(btn=> !btn);
-    }
-    // add user
+   
     function addUser(user){
         setUsers([...users , user]);
         setAddBtnUser(btn => !btn);
     }
+    //selection
+    function handleSelection(user){
+        setSelected(curr=> curr?.id === user.id ? null : user);
+
+    }
     return (<div>
         <div className="list-container">
             <section className="wrapper">
-            <List users = {users} showEditUser = {showEditUser}/>
+            <List users = {users}  onSelect = {handleSelection} selected = {selected}/>
         { btnAddUser &&<AddUser addUser = {addUser} />}
-        {btnEditUser&&<EditUser />}
+        {selected&&<EditUser />}
 
             </section>
             <Button onClick={showAddUser}>{btnAddUser?"Close":"Add User"}</Button>
