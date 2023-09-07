@@ -7,12 +7,8 @@ export default function AddUser(){
         </section>
         <section>
         <input type="text" placeholder="User Name" />
-        </section>
-        <section>
-        <input type="text" placeholder="Image Url" />
-        </section>
-        <section>
         <input type="text" placeholder="User Text" />
+        <input type="text" placeholder="Image Url" />
         </section>
    
        <Button>Add Friend</Button>

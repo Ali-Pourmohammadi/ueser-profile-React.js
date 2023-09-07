@@ -6,19 +6,26 @@ import Button from "./Button"
 import { useState } from "react"
 export default function Container(){
     const [ users , setUsers] = useState(data);
-    const [btnUser , setBtnUser] = useState(false);
-    function showAddFriend(){
-        setBtnUser(btn=> !btn);
+    const [btnAddUser , setAddBtnUser] = useState(false);
+    const [btnEditUser , setBtnEditUser] = useState(false);
+    function showAddUser(){
+        setBtnEditUser(false);
+        setAddBtnUser(btn=> !btn);
+    }
+    function showEditUser(id){
+        setAddBtnUser(false)
+        setBtnEditUser(btn=> !btn);
     }
     return (<div>
         <div className="list-container">
             <section className="wrapper">
-            <List users = {users}/>
-        { btnUser &&<AddUser />}
+            <List users = {users} showEditUser = {showEditUser}/>
+        { btnAddUser &&<AddUser />}
+        {btnEditUser&&<EditUser />}
+
             </section>
-            <Button onClick={showAddFriend}>{btnUser?"Close":"Add User"}</Button>
+            <Button onClick={showAddUser}>{btnAddUser?"Close":"Add User"}</Button>
         </div>
-        <EditUser/>
     </div>)
 
 }

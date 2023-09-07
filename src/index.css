@@ -25,37 +25,51 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;bor
 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 display: flex;
 flex-direction: column;
+align-items: center;
 }
-.hedear-box{
+.header-box{
     width: 90%;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 .form-add-user section{
     width: 100%;
-    /* padding: 1rem 0; */
     padding: .5rem;
     text-align: center;
-    margin: 1rem;
 }
-.form-add-user label{
-    /* font-size: 1rem; */
-    margin: 0  .5rem ;
-    font-size: 1.3rem;
-}
+
 .form-add-user input{
     font-family: Arial, Helvetica, sans-serif;
     width: 65%;
     padding: 1rem .4rem;
     outline: none;
     border: none;
+    margin: 1rem 0;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     font-size: 1.2rem;
 }
 .form-edit-user{
-    width: 20rem;
-    padding: rem;
-    background-color: green;
+    width: 30rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
     border: 1px solid black;    
+    align-items: center;
+}
+.form-edit-user section{
+    padding: .5rem;
+    text-align: center;
+}
+.form-edit-user section input{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 65%;
+    padding: 1rem .4rem;
+    outline: none;
+    border: none;
+    margin: 1rem 0;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    font-size: 1.2rem;
+    
 }
 .user{
     width: 96%;
@@ -95,7 +109,8 @@ flex-direction: column;
 }
 /* styles.css */
 .btn {
-    padding: 1.2rem 3rem;
+    padding: 1rem 0;
+    width: 7rem;
     color: #111;/* Text color */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Show a pointer cursor on hover */
