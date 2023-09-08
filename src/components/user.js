@@ -5,6 +5,6 @@ export default function User({user , onSelect  , selected}){
         <img src={user.image} alt="" className="user-img" />
         <span className="user-name">{user.name}</span>
         <span className="user-title">{user.text}</span>
-        <Button className="btnEdit" onClick={()=> onSelect(user)}>{isSelected ? "Close" : "Edit"}</Button>
+        <button className="btnEdit" onClick={()=> onSelect(user)}>{isSelected ? "Close" : "Edit"}</button>
     </li>)
 }

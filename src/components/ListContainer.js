@@ -21,7 +21,6 @@ export default function Container(){
     function handleSelection(user){
         setSelected(curr=> curr?.id === user.id ? null : user);
         setBtnAddUser(false);
-        setSelected(user);
 
     }
     return (<div>
