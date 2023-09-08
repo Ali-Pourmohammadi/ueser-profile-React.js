@@ -6,19 +6,21 @@ import Button from "./Button"
 import { useState } from "react"
 export default function Container(){
     const [ users , setUsers] = useState(data);
-    const [btnAddUser , setAddBtnUser] = useState(false);
+    const [btnAddUser , setBtnAddUser] = useState(false);
     const [selected , setSelected] = useState(null);
     function showAddUser(){
-        setAddBtnUser(btn=> !btn);
+        setBtnAddUser(btn=> !btn);
+        setSelected(null);
     }
    
     function addUser(user){
         setUsers([...users , user]);
-        setAddBtnUser(btn => !btn);
+        setBtnAddUser(btn => !btn);
     }
     //selection
     function handleSelection(user){
         setSelected(curr=> curr?.id === user.id ? null : user);
+        setBtnAddUser(false);
 
     }
     return (<div>
@@ -26,7 +28,7 @@ export default function Container(){
             <section className="wrapper">
             <List users = {users}  onSelect = {handleSelection} selected = {selected}/>
         { btnAddUser &&<AddUser addUser = {addUser} />}
-        {selected&&<EditUser />}
+        {selected&&<EditUser/>}
 
             </section>
             <Button onClick={showAddUser}>{btnAddUser?"Close":"Add User"}</Button>

@@ -1,8 +1,8 @@
 import Button from "./Button"
-export default function EditUser(){
+export default function EditUser({setAddUser , setUsers , currentUser}){
     return (<form className="form-edit-user">
         <div className="header-box">
-            <h3>Edit User Information</h3>
+            <h3>Edit User Information of X</h3>
         </div>
         <section>
             <input type="text"placeholder="User name" />
