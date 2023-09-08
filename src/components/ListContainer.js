@@ -21,14 +21,15 @@ export default function Container(){
     function handleSelection(user){
         setSelected(curr=> curr?.id === user.id ? null : user);
         setBtnAddUser(false);
+        setSelected(user);
 
     }
     return (<div>
         <div className="list-container">
             <section className="wrapper">
-            <List users = {users}  onSelect = {handleSelection} selected = {selected}/>
-        { btnAddUser &&<AddUser addUser = {addUser} />}
-        {selected&&<EditUser/>}
+            <List users = {users}  onSelect = {handleSelection} selected = {selected} />
+        { btnAddUser &&<AddUser addUser = {addUser}/>}
+        {selected&&<EditUser setUsers = {setUsers} currentUser = {selected} setSelected  = {setSelected} />}
 
             </section>
             <Button onClick={showAddUser}>{btnAddUser?"Close":"Add User"}</Button>
