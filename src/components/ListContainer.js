@@ -1,4 +1,5 @@
 import List from "./List"
+import UserList from "./UserList"
 import AddUser from "./AddUser"
 import data from "../data"
 import EditUser from "./EditUser"
@@ -25,12 +26,12 @@ export default function Container(){
     }
     return (<div>
         <div className="list-container">
-            <section className="wrapper">
-            <List users = {users}  onSelect = {handleSelection} selected = {selected} />
+            <>
+        <List> <UserList users={users} onSelect={handleSelection} selected={selected}/></List>
         { btnAddUser &&<AddUser addUser = {addUser}/>}
         {selected&&<EditUser setUsers = {setUsers} currentUser = {selected} setSelected  = {setSelected} />}
 
-            </section>
+            </>
             <Button onClick={showAddUser}>{btnAddUser?"Close":"Add User"}</Button>
         </div>
     </div>)
