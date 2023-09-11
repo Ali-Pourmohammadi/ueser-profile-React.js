@@ -26,12 +26,12 @@ export default function Container(){
     }
     return (<div>
         <div className="list-container">
-            <>
+            <div className="list-containers">
         <List> <UserList users={users} onSelect={handleSelection} selected={selected}/></List>
         { btnAddUser &&<AddUser addUser = {addUser}/>}
-        {selected&&<EditUser setUsers = {setUsers} currentUser = {selected} setSelected  = {setSelected} />}
+        {selected&&<EditUser setUsers = {setUsers} currentUser = {selected} setSelected  = {setSelected} key={selected.id} />}
 
-            </>
+            </div>
             <Button onClick={showAddUser}>{btnAddUser?"Close":"Add User"}</Button>
         </div>
     </div>)

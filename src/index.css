@@ -10,6 +10,11 @@
     align-items: center;
     position: relative;
 }
+.list-containers{
+    width: 100%;
+    display: flex;
+}
+
 .wrapper{
     width: 100%;
     display: flex;

@@ -1,8 +1,8 @@
 import { useState } from "react"
 import Button from "./Button"
 export default function EditUser({  setUsers , currentUser   , setSelected}){
-    const [editName  , setEditName] = useState("");
-    const [editText , setEditText] = useState("");
+    const [editName  , setEditName] = useState(currentUser.name);
+    const [editText , setEditText] = useState(currentUser.text);
     const [editImage , setEditImage] = useState(currentUser.image);
     function handleEdit(e){
         e.preventDefault();
